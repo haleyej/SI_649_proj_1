@@ -42,7 +42,7 @@ all_lines = alt.Chart(disability_df).transform_filter(
                       legend = alt.Legend(title = 'Type of Disability', titleFontSize = 15, 
                                           labelFontSize = 12, labelFontWeight = 'bold', 
                                           symbolStrokeWidth = 10, symbolSize = 200,
-                                          orient = "none", legendX = 815, legendY = 0))
+                                          orient = "none", legendX = 605, legendY = 0))
 )
 
 type_lines = alt.Chart(disability_df).transform_filter(
@@ -59,7 +59,7 @@ type_lines = alt.Chart(disability_df).transform_filter(
                        legend = alt.Legend(title = '', labelFontSize = 12, labelOffset = 11,
                                            symbolFillColor = 'lightblue', symbolSize = 150,
                                            symbolStrokeColor = 'lightblue', orient = "none", 
-                                           legendX = 819, legendY = 59)
+                                           legendX = 609, legendY = 59)
                      )
 )
 
@@ -77,7 +77,7 @@ aca_passage_text = alt.Chart(aca_df).mark_text(
     fontSize = 13.5, 
     fontWeight = 'bold',
     dy = -40,
-    dx = -225
+    dx = -205
 )
 
 aca_effect = alt.Chart(aca_effect_df).mark_rule(
@@ -93,8 +93,8 @@ aca_effect_text = alt.Chart(aca_effect_df).mark_text(
     align = 'left',
     fontSize = 13.5, 
     fontWeight = 'bold',
-    dy = 95,
-    dx = 45
+    dy = 100,
+    dx = 40
 )
 
 layers = alt.layer(
@@ -102,7 +102,7 @@ layers = alt.layer(
 ).resolve_scale(
     color = 'independent'
 ).properties(
-    width = 1200, 
+    width = 800, 
     height = 700
 ).configure_point(size = 90)
 
