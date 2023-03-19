@@ -8,7 +8,7 @@ pd.options.mode.chained_assignment = None
 st.set_page_config(layout="wide")
 
 # Data Manipulation
-df = pd.read_csv("../data/preventitive_care.csv")
+df = pd.read_csv("data/preventitive_care.csv")
 df = df.drop(columns = ['FootnoteText', 'Url', 'FootnoteType'])
 preventitive_care = df[(df.Category == 'Prevention & Screenings') & (df.Year == 2020.0) & (df.Response == 'Yes')]
 preventitive_care['Data_Value'] = preventitive_care.Data_Value / 100
