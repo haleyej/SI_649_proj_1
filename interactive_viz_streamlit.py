@@ -31,7 +31,7 @@ sorting = ['Any Disability', 'Cognitive Disability', 'Hearing Disability', 'Mobi
 
 
 main_title = alt.TitleParams("Many Disabled People Aren't Up To Date on Important Preventitive Care", 
-                         subtitle = '''Population-adjusted prevelance of preventitive care''',
+                         subtitle = '''Average population-adjusted rate of preventitive care''',
                          anchor = 'start',
                          dx = 45, 
                          fontSize = 22, 
@@ -109,7 +109,7 @@ st.write("Population-adjusted prevelance of preventitive care")
 st.write("Haley Johnson, SI 649")
 chart
 
-st.write('''Population adjusted figures reflect the fact that certain type of preventitive care are only recommended for certain segments of the population.
-            For example, mamograms are only required for females aged 50-74. Population adjusted figures show what the up-to-date rates would be if everyone 
+st.write('''Population adjusted rates reflect the fact that certain type of preventitive care are only recommended for certain segments of the population.
+            For example, mamograms are only required for females aged 50-74. Population adjusted rates show what the up-to-date rates would be if everyone 
             in the "standard population" needed this preventitive care.'''
 )
