@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np 
 import os
+import html5lib
 import altair as alt
 import streamlit as st
 
