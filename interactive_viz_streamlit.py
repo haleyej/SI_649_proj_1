@@ -46,7 +46,7 @@ strats_select = alt.selection_point(fields = ['Stratification1'], value = 'Any D
 coords = alt.selection_point(encodings = ['x', 'y'], on = 'mouseover', nearest = True, empty = True)
 
 
-lines = alt.Chart(preventitive_care).add_selection(
+lines = alt.Chart(preventitive_care).add_params(
     strats_select
 ).mark_rule(
     size = 6, 
@@ -60,7 +60,7 @@ lines = alt.Chart(preventitive_care).add_selection(
                alt.Tooltip('margin_of_error:Q', title = 'Margin of Error', format = '.2%')]
 ).transform_filter(strats_select)
 
-mean = alt.Chart(preventitive_care).add_selection(
+mean = alt.Chart(preventitive_care).add_params(
     coords
 ).mark_point(
     filled = True,
