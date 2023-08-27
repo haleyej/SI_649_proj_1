@@ -43,7 +43,7 @@ strats = list(preventitive_care.Stratification1.unique())
 strats_dropdown = alt.binding_select(options = strats, name = "Ability Type: ")
 strats_select = alt.selection_point(fields = ['Stratification1'], init = {'Stratification1' : 'Any Disability'}, bind = strats_dropdown, empty = 'none')
 
-coords = alt.selection_single(encodings = ['x', 'y'], on = 'mouseover', nearest = True, empty = 'none')
+coords = alt.selection_point(encodings = ['x', 'y'], on = 'mouseover', nearest = True, empty = 'none')
 
 
 lines = alt.Chart(preventitive_care).add_selection(
