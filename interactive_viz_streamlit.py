@@ -41,7 +41,7 @@ main_title = alt.TitleParams("Many Disabled People Aren't Up To Date on Importan
 
 strats = list(preventitive_care.Stratification1.unique())
 strats_dropdown = alt.binding_select(options = strats, name = "Ability Type: ")
-strats_select = alt.selection_single(fields = ['Stratification1'], init = {'Stratification1' : 'Any Disability'}, bind = strats_dropdown, empty = 'none')
+strats_select = alt.selection_single(fields = ['Stratification1'], init = {'Stratification1' : 'Any Disability'}, empty = 'none')
 
 coords = alt.selection_single(encodings = ['x', 'y'], on = 'mouseover', nearest = True, empty = 'none')
 
@@ -86,9 +86,7 @@ text_base = alt.Chart(preventitive_care).mark_rect(
 ).encode(
     y = alt.Y('short_question:N', axis = alt.Axis(title = 'Care Type', labelFontSize = 10.5, titleFontSize = 13)),
     x = alt.X('Stratification1:N', sort = sorting, axis = alt.Axis(title = '', labelFontSize = 10.5)), 
-    color = alt.condition(coords, alt.value('#7396f0'), alt.value('#f7f9fc')
-                          #alt.value('#f0f3f7')
-                         )
+    color = alt.condition(coords, alt.value('#7396f0'), alt.value('#f7f9fc'))
 )
 
 text_marks = alt.Chart(preventitive_care).mark_text(
