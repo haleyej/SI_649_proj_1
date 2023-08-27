@@ -7,8 +7,9 @@ import streamlit as st
 pd.options.mode.chained_assignment = None
 st.set_page_config(layout="wide")
 
+
 # Data Manipulation
-df = pd.read_csv("data/preventitive_care.csv")
+df = pd.read_csv("../data/preventitive_care.csv")
 df = df.drop(columns = ['FootnoteText', 'Url', 'FootnoteType'])
 preventitive_care = df[(df.Category == 'Prevention & Screenings') & (df.Year == 2020.0) & (df.Response == 'Yes')]
 preventitive_care['Data_Value'] = preventitive_care.Data_Value / 100
@@ -103,13 +104,14 @@ bottom = alt.layer(text_base, text_marks).properties(width = 850, height = 150, 
 
 chart = alt.vconcat(top, bottom).configure_axisX(labelAngle = 0).configure_axis(labelLimit = 300)
 
+
 # Page Set Up 
 st.title("Many Disabled People Aren't Up To Date on Important Preventitive Care")
 st.write("Population-adjusted prevelance of preventitive care")
 st.write("Haley Johnson, SI 649")
 chart
 
-st.write('''Population adjusted rates reflect the fact that certain type of preventitive care are only recommended for certain segments of the population.
-            For example, mamograms are only required for females aged 50-74. Population adjusted rates show what the up-to-date rates would be if everyone 
+st.write('''Population adjusted figures reflect the fact that certain type of preventitive care are only recommended for certain segments of the population.
+            For example, mamograms are only required for females aged 50-74. Population adjusted figures show what the up-to-date rates would be if everyone 
             in the "standard population" needed this preventitive care.'''
 )
