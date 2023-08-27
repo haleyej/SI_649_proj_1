@@ -41,9 +41,9 @@ main_title = alt.TitleParams("Many Disabled People Aren't Up To Date on Importan
 
 strats = list(preventitive_care.Stratification1.unique())
 strats_dropdown = alt.binding_select(options = strats, name = "Ability Type: ")
-strats_select = alt.selection_point(fields = ['Stratification1'], init = {'Stratification1' : 'Any Disability'}, bind = strats_dropdown, empty = 'none')
+strats_select = alt.selection_point(fields = ['Stratification1'], value = 'Any Disability', bind = strats_dropdown, empty = True)
 
-coords = alt.selection_point(encodings = ['x', 'y'], on = 'mouseover', nearest = True, empty = 'none')
+coords = alt.selection_point(encodings = ['x', 'y'], on = 'mouseover', nearest = True, empty = True)
 
 
 lines = alt.Chart(preventitive_care).add_selection(
